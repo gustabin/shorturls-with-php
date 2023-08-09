@@ -1,0 +1,7 @@
+# Habilitar la reescritura de URL
+RewriteEngine On
+
+# Redirigir las solicitudes a get_long_url.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9]+)$ get_long_url.php?code=$1 [QSA,L]
